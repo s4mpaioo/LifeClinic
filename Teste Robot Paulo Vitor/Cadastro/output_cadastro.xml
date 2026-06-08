@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-06-07T21:25:42.951287" rpa="false" schemaversion="5">
+<suite id="s1" name="Cadatro" source="C:\Users\Paulo1\Desktop\Cadastro robot indiv\cadatro.robot">
+<test id="s1-t1" name="CT01 - Deve bloquear cadastro com campos vazios" line="17">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:43.231147" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/cadastro.html'.</msg>
+<arg>${URL_CADASTRO}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-07T21:25:43.230082" elapsed="1.974322"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-07T21:25:45.204710" elapsed="0.017836"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-07T21:25:47.224883" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-07T21:25:45.222826" elapsed="2.002215"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:47.225771" level="INFO">Clicking button 'css=#formCadastro button[type="submit"]'.</msg>
+<arg>${BOTAO_CADASTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:25:47.225347" elapsed="0.050301"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-07T21:25:49.276283" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-07T21:25:47.275896" elapsed="2.000499"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:49.279778" level="INFO">${url_atual} = http://localhost:3000/cadastro.html</msg>
+<var>${url_atual}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-06-07T21:25:49.276691" elapsed="0.003114"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${url_atual}</arg>
+<arg>cadastro</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-06-07T21:25:49.279987" elapsed="0.000384"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-07T21:25:49.280613" elapsed="2.078707"/>
+</kw>
+<doc>Partição P1: Submeter formulário vazio — deve permanecer na tela de cadastro</doc>
+<status status="PASS" start="2026-06-07T21:25:43.229140" elapsed="8.130397"/>
+</test>
+<test id="s1-t2" name="CT02 - Deve exibir erro com CPF inválido" line="28">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:51.362036" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/cadastro.html'.</msg>
+<arg>${URL_CADASTRO}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-07T21:25:51.361811" elapsed="1.898240"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-07T21:25:53.260352" elapsed="0.028528"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-07T21:25:55.289885" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-07T21:25:53.289123" elapsed="2.000873"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:55.290617" level="INFO">Typing text 'Teste Usuario' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>Teste Usuario</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:25:55.290291" elapsed="0.055318"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:55.346366" level="INFO">Typing text '111.111.111-11' into text field 'id=cpf'.</msg>
+<arg>${INPUT_CPF}</arg>
+<arg>111.111.111-11</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:25:55.345938" elapsed="0.048312"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:55.394826" level="INFO">Typing text '2000-01-01' into text field 'id=dataNascimento'.</msg>
+<arg>${INPUT_NASC}</arg>
+<arg>2000-01-01</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:25:55.394550" elapsed="0.054079"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:55.449131" level="INFO">Typing text '11999999999' into text field 'id=telefone'.</msg>
+<arg>${INPUT_TEL}</arg>
+<arg>11999999999</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:25:55.448892" elapsed="0.043354"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:55.492840" level="INFO">Typing text 'teste.interface@email.com' into text field 'id=emailCad'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>teste.interface@email.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:25:55.492526" elapsed="0.050772"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:55.543897" level="INFO">Typing text 'Teste123!' into text field 'id=senha'.</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>Teste123!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:25:55.543595" elapsed="0.050980"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:55.595146" level="INFO">Clicking element 'id=terms'.</msg>
+<arg>${INPUT_TERMS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:25:55.594904" elapsed="0.036981"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:55.632353" level="INFO">Clicking button 'css=#formCadastro button[type="submit"]'.</msg>
+<arg>${BOTAO_CADASTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:25:55.632125" elapsed="0.048742"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-07T21:25:57.681889" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-07T21:25:55.681109" elapsed="2.000877"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:57.685040" level="INFO">${url_atual} = http://localhost:3000/cadastro.html</msg>
+<var>${url_atual}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-06-07T21:25:57.682231" elapsed="0.002834"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${url_atual}</arg>
+<arg>cadastro</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-06-07T21:25:57.685235" elapsed="0.000274"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-07T21:25:57.685737" elapsed="2.098650"/>
+</kw>
+<doc>Partição P2: CPF com formato inválido — deve permanecer na tela de cadastro</doc>
+<status status="PASS" start="2026-06-07T21:25:51.360007" elapsed="8.424609"/>
+</test>
+<test id="s1-t3" name="CT03 - Deve cadastrar com dados validos e redirecionar" line="46">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:25:59.785607" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/cadastro.html'.</msg>
+<arg>${URL_CADASTRO}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-07T21:25:59.785405" elapsed="1.678492"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-07T21:26:01.464222" elapsed="0.026933"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-07T21:26:03.492425" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-07T21:26:01.491598" elapsed="2.000936"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:26:03.493115" level="INFO">Typing text 'Teste Usuario' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>Teste Usuario</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:26:03.492826" elapsed="0.057081"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:26:03.550591" level="INFO">Typing text '529.982.247-25' into text field 'id=cpf'.</msg>
+<arg>${INPUT_CPF}</arg>
+<arg>529.982.247-25</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:26:03.550215" elapsed="0.045175"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:26:03.596010" level="INFO">Typing text '2000-01-01' into text field 'id=dataNascimento'.</msg>
+<arg>${INPUT_NASC}</arg>
+<arg>2000-01-01</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:26:03.595714" elapsed="0.060269"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:26:03.656609" level="INFO">Typing text '11999999999' into text field 'id=telefone'.</msg>
+<arg>${INPUT_TEL}</arg>
+<arg>11999999999</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:26:03.656291" elapsed="0.043976"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:26:03.700886" level="INFO">Typing text 'teste.interface@email.com' into text field 'id=emailCad'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>teste.interface@email.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:26:03.700561" elapsed="0.069778"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:26:03.770973" level="INFO">Typing text 'Teste123!' into text field 'id=senha'.</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>Teste123!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:26:03.770645" elapsed="0.045858"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-07T21:26:03.817092" level="INFO">Clicking element 'id=terms'.</msg>
+<arg>${INPUT_TERMS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-07T21:26:03.816865" elapsed="0.038347"/>
+</kw>
+<doc>Partição P3: Todos os campos válidos — redirecionamento para index.html</doc>
+<status status="PASS" start="2026-06-07T21:25:59.785019" elapsed="4.070427"/>
+</test>
+<status status="PASS" start="2026-06-07T21:25:42.952353" elapsed="20.903619"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cadatro" id="s1" pass="3" fail="0" skip="0">Cadatro</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
