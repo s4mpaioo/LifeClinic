@@ -1,0 +1,434 @@
+{
+  "info": {
+    "_postman_id": "68ccd9b9-01b8-4f48-b57e-1b5327533799",
+    "name": "LifeClinic - Testes de API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55361144",
+    "_collection_link": "https://go.postman.co/collection/55361144-68ccd9b9-01b8-4f48-b57e-1b5327533799?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "API 1 - Cancelamento de Consultas",
+      "item": [
+        {
+          "name": "CT01 — Consulta inexistente",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 404\", function () {\r",
+                  "    pm.response.to.have.status(404);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Mensagem de consulta não encontrada\", function () {\r",
+                  "    var json = pm.response.json();\r",
+                  "    pm.expect(json.error).to.eql(\"Consulta não encontrada.\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1NzdjOTdjLTYzOTgtNDI0NC04MDY3LWRjZDM1NTZhNjllYiIsIm5vbWUiOiJUZXN0ZSBBUEkiLCJlbWFpbCI6InRlc3RlQGxpZmVjbGluaWMuY29tIiwicGVyZmlsIjoicGFjaWVudGUiLCJpYXQiOjE3ODA4ODkwODAsImV4cCI6MTc4MDkxNzg4MH0.JrOTyxvHIB9Oioms4KhYaH-dRF1GEF7Mq0I4_CxRv1s",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/consultas/ID_INEXISTENTE/cancelar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "consultas",
+                "ID_INEXISTENTE",
+                "cancelar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CT02 — Consulta válida",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Mensagem de cancelamento\", function () {\r",
+                  "    var json = pm.response.json();\r",
+                  "    pm.expect(json.message).to.eql(\"Consulta cancelada.\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1NzdjOTdjLTYzOTgtNDI0NC04MDY3LWRjZDM1NTZhNjllYiIsIm5vbWUiOiJUZXN0ZSBBUEkiLCJlbWFpbCI6InRlc3RlQGxpZmVjbGluaWMuY29tIiwicGVyZmlsIjoicGFjaWVudGUiLCJpYXQiOjE3ODA4ODkwODAsImV4cCI6MTc4MDkxNzg4MH0.JrOTyxvHIB9Oioms4KhYaH-dRF1GEF7Mq0I4_CxRv1s",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/consultas/16255f9a-feb1-49b9-9e0f-851cc5d4783f/cancelar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "consultas",
+                "16255f9a-feb1-49b9-9e0f-851cc5d4783f",
+                "cancelar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CT03 — Consulta já cancelada",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Mensagem de consulta já cancelada\", function () {\r",
+                  "    var json = pm.response.json();\r",
+                  "    pm.expect(json.error).to.eql(\"Consulta já está cancelada.\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1NzdjOTdjLTYzOTgtNDI0NC04MDY3LWRjZDM1NTZhNjllYiIsIm5vbWUiOiJUZXN0ZSBBUEkiLCJlbWFpbCI6InRlc3RlQGxpZmVjbGluaWMuY29tIiwicGVyZmlsIjoicGFjaWVudGUiLCJpYXQiOjE3ODA4ODkwODAsImV4cCI6MTc4MDkxNzg4MH0.JrOTyxvHIB9Oioms4KhYaH-dRF1GEF7Mq0I4_CxRv1s",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/consultas/16255f9a-feb1-49b9-9e0f-851cc5d4783f/cancelar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "consultas",
+                "16255f9a-feb1-49b9-9e0f-851cc5d4783f",
+                "cancelar"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "API 2 - Horários Disponíveis de Médicos",
+      "item": [
+        {
+          "name": "CT01 — Data ausente",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Mensagem de data obrigatória\", function () {\r",
+                  "    var json = pm.response.json();\r",
+                  "    pm.expect(json.error).to.eql(\"Parâmetro data é obrigatório.\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1NzdjOTdjLTYzOTgtNDI0NC04MDY3LWRjZDM1NTZhNjllYiIsIm5vbWUiOiJUZXN0ZSBBUEkiLCJlbWFpbCI6InRlc3RlQGxpZmVjbGluaWMuY29tIiwicGVyZmlsIjoicGFjaWVudGUiLCJpYXQiOjE3ODA4ODkwODAsImV4cCI6MTc4MDkxNzg4MH0.JrOTyxvHIB9Oioms4KhYaH-dRF1GEF7Mq0I4_CxRv1s",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/medicos/435f261d-373b-4ce9-b068-3b6c721c63d6/horarios-disponiveis",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "medicos",
+                "435f261d-373b-4ce9-b068-3b6c721c63d6",
+                "horarios-disponiveis"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CT02 — Médico inexistente",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 404\", function () {\r",
+                  "    pm.response.to.have.status(404);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Mensagem de médico não encontrado\", function () {\r",
+                  "    var json = pm.response.json();\r",
+                  "    pm.expect(json.error).to.eql(\"Médico não encontrado.\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1NzdjOTdjLTYzOTgtNDI0NC04MDY3LWRjZDM1NTZhNjllYiIsIm5vbWUiOiJUZXN0ZSBBUEkiLCJlbWFpbCI6InRlc3RlQGxpZmVjbGluaWMuY29tIiwicGVyZmlsIjoicGFjaWVudGUiLCJpYXQiOjE3ODA4ODkwODAsImV4cCI6MTc4MDkxNzg4MH0.JrOTyxvHIB9Oioms4KhYaH-dRF1GEF7Mq0I4_CxRv1s",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/medicos/ID_INEXISTENTE/horarios-disponiveis?data=2026-06-20",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "medicos",
+                "ID_INEXISTENTE",
+                "horarios-disponiveis"
+              ],
+              "query": [
+                {
+                  "key": "data",
+                  "value": "2026-06-20"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CT03 — Médico válido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Retorna horários disponíveis\", function () {\r",
+                  "    var json = pm.response.json();\r",
+                  "    pm.expect(json.disponiveis).to.be.an('array');\r",
+                  "    pm.expect(json.disponiveis.length).to.be.above(0);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1NzdjOTdjLTYzOTgtNDI0NC04MDY3LWRjZDM1NTZhNjllYiIsIm5vbWUiOiJUZXN0ZSBBUEkiLCJlbWFpbCI6InRlc3RlQGxpZmVjbGluaWMuY29tIiwicGVyZmlsIjoicGFjaWVudGUiLCJpYXQiOjE3ODA4ODkwODAsImV4cCI6MTc4MDkxNzg4MH0.JrOTyxvHIB9Oioms4KhYaH-dRF1GEF7Mq0I4_CxRv1s",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/medicos/435f261d-373b-4ce9-b068-3b6c721c63d6/horarios-disponiveis?data=2026-06-20",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "medicos",
+                "435f261d-373b-4ce9-b068-3b6c721c63d6",
+                "horarios-disponiveis"
+              ],
+              "query": [
+                {
+                  "key": "data",
+                  "value": "2026-06-20"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Login - Obter Token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var json = pm.response.json();\r",
+              "pm.collectionVariables.set(\"token\", json.token);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"teste@lifeclinic.com\",\r\n  \"senha\": \"teste1234\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1NzdjOTdjLTYzOTgtNDI0NC04MDY3LWRjZDM1NTZhNjllYiIsIm5vbWUiOiJUZXN0ZSBBUEkiLCJlbWFpbCI6InRlc3RlQGxpZmVjbGluaWMuY29tIiwicGVyZmlsIjoicGFjaWVudGUiLCJpYXQiOjE3ODA4ODkwODAsImV4cCI6MTc4MDkxNzg4MH0.JrOTyxvHIB9Oioms4KhYaH-dRF1GEF7Mq0I4_CxRv1s",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/medicos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicos"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "consultaId",
+      "value": ""
+    }
+  ]
+}
