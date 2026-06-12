@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.11.9 on win32)" generated="2026-06-12T15:31:01.770283" rpa="false" schemaversion="5">
+<suite id="s1" name="Ui Tests" source="C:\Users\Dell\Downloads\lc_entrega (2)\lc_entrega\testes\ui_tests.robot">
+<test id="s1-t1" name="CTUI05 - Validar Dashboard" line="21">
+<kw name="Abrir Sistema Logado">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:02.001104" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5501/frontend/index.html'.</msg>
+<arg>${URL}/index.html</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-12T15:31:02.001104" elapsed="3.227419"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-12T15:31:05.229522" elapsed="0.032579"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-12T15:31:07.263775" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-12T15:31:05.262101" elapsed="2.001674"/>
+</kw>
+<kw name="Realizar Login Fake">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:07.265896" level="INFO">Executing JavaScript:
+localStorage.setItem('lc_token','token_teste')
+Without any arguments.</msg>
+<arg>localStorage.setItem('lc_token','token_teste')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-12T15:31:07.265896" elapsed="0.010003"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:07.275899" level="INFO">Executing JavaScript:
+localStorage.setItem('lc_usuario','{"nome":"Pedro"}')
+Without any arguments.</msg>
+<arg>localStorage.setItem('lc_usuario','{"nome":"Pedro"}')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-12T15:31:07.275899" elapsed="0.007818"/>
+</kw>
+<status status="PASS" start="2026-06-12T15:31:07.264899" elapsed="0.018818"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-12T15:31:08.285490" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-12T15:31:07.283717" elapsed="1.001773"/>
+</kw>
+<status status="PASS" start="2026-06-12T15:31:02.000104" elapsed="6.285386"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:08.286586" level="INFO">Opening url 'http://localhost:5501/frontend/dashboard.html'</msg>
+<arg>http://localhost:5501/frontend/dashboard.html</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-12T15:31:08.285490" elapsed="0.022090"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-12T15:31:10.310299" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-12T15:31:08.307580" elapsed="2.002719"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Bem-vindo</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-12T15:31:10.310299" elapsed="0.024155"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Agendar Consulta</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-12T15:31:10.334454" elapsed="0.019075"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Minhas Consultas</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-12T15:31:10.354544" elapsed="0.020336"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Meus Medicamentos</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-12T15:31:10.375879" elapsed="0.013430"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:10.616383" level="INFO">Element 'id=nomeUsuario' is displayed.</msg>
+<arg>id=nomeUsuario</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-12T15:31:10.390303" elapsed="0.226080"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-12T15:31:10.617441" elapsed="2.189284"/>
+</kw>
+<doc>Verifica se o dashboard é carregado corretamente após autenticação.</doc>
+<status status="PASS" start="2026-06-12T15:31:02.000104" elapsed="10.807619"/>
+</test>
+<test id="s1-t2" name="CTUI06 - Validar Tela Consultas" line="33">
+<kw name="Abrir Sistema Logado">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:12.810722" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5501/frontend/index.html'.</msg>
+<arg>${URL}/index.html</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-12T15:31:12.810722" elapsed="3.201854"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-12T15:31:16.013579" elapsed="0.039998"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-12T15:31:18.054755" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-12T15:31:16.053577" elapsed="2.001178"/>
+</kw>
+<kw name="Realizar Login Fake">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:18.055381" level="INFO">Executing JavaScript:
+localStorage.setItem('lc_token','token_teste')
+Without any arguments.</msg>
+<arg>localStorage.setItem('lc_token','token_teste')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-12T15:31:18.055381" elapsed="0.008559"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:18.064449" level="INFO">Executing JavaScript:
+localStorage.setItem('lc_usuario','{"nome":"Pedro"}')
+Without any arguments.</msg>
+<arg>localStorage.setItem('lc_usuario','{"nome":"Pedro"}')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-12T15:31:18.063940" elapsed="0.004640"/>
+</kw>
+<status status="PASS" start="2026-06-12T15:31:18.055381" elapsed="0.013199"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-12T15:31:19.069351" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-12T15:31:18.068580" elapsed="1.000771"/>
+</kw>
+<status status="PASS" start="2026-06-12T15:31:12.809724" elapsed="6.259627"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:19.070449" level="INFO">Opening url 'http://localhost:5501/frontend/consultas.html'</msg>
+<arg>http://localhost:5501/frontend/consultas.html</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-12T15:31:19.070449" elapsed="0.025097"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-12T15:31:21.096959" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-12T15:31:19.095546" elapsed="2.001413"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Histórico e Agendamentos</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-12T15:31:21.097975" elapsed="0.013645"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Nova Consulta</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-12T15:31:21.122696" elapsed="0.031299"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:21.172664" level="INFO">Element 'id=tabelaConsultas' is displayed.</msg>
+<arg>id=tabelaConsultas</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-12T15:31:21.153995" elapsed="0.018669"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:21.193415" level="INFO">Element 'id=btnAnterior' is displayed.</msg>
+<arg>id=btnAnterior</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-12T15:31:21.173645" elapsed="0.019770"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-12T15:31:21.212931" level="INFO">Element 'id=btnProximo' is displayed.</msg>
+<arg>id=btnProximo</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-12T15:31:21.194432" elapsed="0.018499"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-12T15:31:21.213947" elapsed="2.146945"/>
+</kw>
+<doc>Verifica se a tela de consultas é carregada corretamente.</doc>
+<status status="PASS" start="2026-06-12T15:31:12.808724" elapsed="10.556170"/>
+</test>
+<status status="PASS" start="2026-06-12T15:31:01.772283" elapsed="21.593608"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Ui Tests" id="s1" pass="2" fail="0" skip="0">Ui Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
