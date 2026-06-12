@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.5 on darwin)" generated="2026-06-11T23:15:29.182874" rpa="false" schemaversion="5">
+<suite id="s1" name="Agendar" source="/Users/leoclemons/Documents/LifeClinic/Teste Robot Leo /agendar/agendar.robot">
+<test id="s1-t1" name="CT01 - Deve agendar consulta com dados válidos" line="32">
+<kw name="Fazer Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:30.032233" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/index.html'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:15:30.031782" elapsed="6.271308"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-11T23:15:36.305749" elapsed="0.378323"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:15:38.690753" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:15:36.684557" elapsed="2.006427"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:38.692811" level="INFO">Typing text 'leo@gmail.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL_LOGIN}</arg>
+<arg>leo@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:15:38.691273" elapsed="0.332458"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:39.030718" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-06-11T23:15:39.087321" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_LOGIN}</arg>
+<arg>10101020</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:15:39.028732" elapsed="0.143824"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:39.173874" level="INFO">Clicking button 'css=#formLogin button[type="submit"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:15:39.172923" elapsed="0.262375"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:15:41.436515" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:15:39.435663" elapsed="2.001101"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:41.437576" level="INFO">Opening url 'http://localhost:3000/agendar.html'</msg>
+<arg>${URL_AGENDAR}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:15:41.437157" elapsed="0.351765"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:15:43.790818" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:15:41.789207" elapsed="2.001847"/>
+</kw>
+<status status="PASS" start="2026-06-11T23:15:30.030167" elapsed="13.761231"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:43.792933" level="INFO">Selecting options from selection list 'id=doctor' by label Dr. Carlos Oliveira - Clínica Geral.</msg>
+<arg>${SELECT_MEDICO}</arg>
+<arg>Dr. Carlos Oliveira - Clínica Geral</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-06-11T23:15:43.792160" elapsed="0.192691"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:43.986438" level="INFO">Typing text '2027-02-15' into text field 'id=date'.</msg>
+<arg>${INPUT_DATA}</arg>
+<arg>2027-02-15</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:15:43.985343" elapsed="0.176871"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:15:45.164058" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:15:44.162755" elapsed="1.001552"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:45.169598" level="INFO">Selecting options from selection list 'id=time' by value 09:00.</msg>
+<msg time="2026-06-11T23:15:45.352401" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-11T23:15:45.352728" level="FAIL">NoSuchElementException: Message: Cannot locate option with value: 09:00; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+</msg>
+<arg>${SELECT_HORARIO}</arg>
+<arg>09:00</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="FAIL" start="2026-06-11T23:15:45.165020" elapsed="0.208383">NoSuchElementException: Message: Cannot locate option with value: 09:00; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${INPUT_MOTIVO}</arg>
+<arg>Consulta de rotina</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-11T23:15:45.373914" elapsed="0.000090"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-06-11T23:15:45.374341" elapsed="0.000083"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${BOTAO_AGENDAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-11T23:15:45.374735" elapsed="0.000083"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-06-11T23:15:45.375116" elapsed="0.000085"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>consultas.html</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="NOT RUN" start="2026-06-11T23:15:45.378061" elapsed="0.000070"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-11T23:15:45.378953" elapsed="0.465080"/>
+</kw>
+<doc>Regra R1: Todos os campos válidos — redirecionado para consultas</doc>
+<status status="FAIL" start="2026-06-11T23:15:30.028884" elapsed="15.815417">NoSuchElementException: Message: Cannot locate option with value: 09:00; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+</status>
+</test>
+<test id="s1-t2" name="CT02 - Deve bloquear envio sem médico selecionado" line="46">
+<kw name="Fazer Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:45.849221" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/index.html'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:15:45.848893" elapsed="4.214706"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-11T23:15:50.064325" elapsed="0.353968"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:15:52.421225" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:15:50.418823" elapsed="2.002705"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:52.427562" level="INFO">Typing text 'leo@gmail.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL_LOGIN}</arg>
+<arg>leo@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:15:52.426065" elapsed="0.247966"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:52.675096" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-06-11T23:15:52.732021" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_LOGIN}</arg>
+<arg>10101020</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:15:52.674332" elapsed="0.146640"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:52.821625" level="INFO">Clicking button 'css=#formLogin button[type="submit"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:15:52.821276" elapsed="0.243756"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:15:55.066837" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:15:53.065447" elapsed="2.001637"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:55.068103" level="INFO">Opening url 'http://localhost:3000/agendar.html'</msg>
+<arg>${URL_AGENDAR}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:15:55.067683" elapsed="0.309828"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:15:57.384814" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:15:55.377849" elapsed="2.007246"/>
+</kw>
+<status status="PASS" start="2026-06-11T23:15:45.848343" elapsed="11.537094"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:57.388355" level="INFO">Typing text '2027-02-15' into text field 'id=date'.</msg>
+<arg>${INPUT_DATA}</arg>
+<arg>2027-02-15</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:15:57.387323" elapsed="0.136260"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:15:58.527605" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:15:57.524080" elapsed="1.003729"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:58.529211" level="INFO">Selecting options from selection list 'id=time' by value 09:00.</msg>
+<arg>${SELECT_HORARIO}</arg>
+<arg>09:00</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-11T23:15:58.528603" elapsed="0.113714"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:15:59.643386" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:15:58.642601" elapsed="1.001025"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:15:59.647040" level="INFO">Clicking button 'css=#appointmentForm button[type="submit"]'.</msg>
+<arg>${BOTAO_AGENDAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:15:59.644115" elapsed="0.199206"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:16:01.847085" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:15:59.843895" elapsed="2.003663"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:01.851672" level="INFO">Executing JavaScript:
+return document.getElementById('doctor').validity.valueMissing
+Without any arguments.</msg>
+<msg time="2026-06-11T23:16:01.904615" level="INFO">${valid} = True</msg>
+<var>${valid}</var>
+<arg>return document.getElementById('doctor').validity.valueMissing</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-11T23:16:01.848311" elapsed="0.056444"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${valid}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-06-11T23:16:01.905191" elapsed="0.013757"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-11T23:16:01.931214" elapsed="0.378594"/>
+</kw>
+<doc>Regra R2: Médico não selecionado — campo obrigatório bloqueado pelo navegador</doc>
+<status status="PASS" start="2026-06-11T23:15:45.845505" elapsed="16.464843"/>
+</test>
+<test id="s1-t3" name="CT03 - Deve bloquear data no passado" line="59">
+<kw name="Fazer Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:02.318611" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/index.html'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:16:02.318110" elapsed="3.919369"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-11T23:16:06.238221" elapsed="0.396684"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:16:08.641931" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:16:06.635352" elapsed="2.006865"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:08.644009" level="INFO">Typing text 'leo@gmail.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL_LOGIN}</arg>
+<arg>leo@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:16:08.643020" elapsed="0.247977"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:08.891667" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-06-11T23:16:08.960800" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_LOGIN}</arg>
+<arg>10101020</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:16:08.891252" elapsed="0.182412"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:09.074440" level="INFO">Clicking button 'css=#formLogin button[type="submit"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:16:09.074033" elapsed="0.249980"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:16:11.330585" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:16:09.327858" elapsed="2.002984"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:11.331615" level="INFO">Opening url 'http://localhost:3000/agendar.html'</msg>
+<arg>${URL_AGENDAR}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:16:11.331217" elapsed="0.276301"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:16:13.608759" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:16:11.607808" elapsed="2.001320"/>
+</kw>
+<status status="PASS" start="2026-06-11T23:16:02.314699" elapsed="11.294787"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:13.612512" level="INFO">Selecting options from selection list 'id=doctor' by label Dr. Carlos Oliveira - Clínica Geral.</msg>
+<arg>${SELECT_MEDICO}</arg>
+<arg>Dr. Carlos Oliveira - Clínica Geral</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-06-11T23:16:13.610105" elapsed="0.155215"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:13.766105" level="INFO">Executing JavaScript:
+document.getElementById('date').removeAttribute('min')
+Without any arguments.</msg>
+<arg>document.getElementById('date').removeAttribute('min')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-11T23:16:13.765824" elapsed="0.019544"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:13.791034" level="INFO">Typing text '2019-05-10' into text field 'id=date'.</msg>
+<arg>${INPUT_DATA}</arg>
+<arg>2019-05-10</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:16:13.785823" elapsed="0.188554"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:16:14.980185" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:16:13.975205" elapsed="1.005222"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:14.982313" level="INFO">Selecting options from selection list 'id=time' by value 09:00.</msg>
+<arg>${SELECT_HORARIO}</arg>
+<arg>09:00</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-11T23:16:14.981363" elapsed="0.100177"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:16:16.084758" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:16:15.082217" elapsed="1.002870"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:16.089984" level="INFO">Clicking button 'css=#appointmentForm button[type="submit"]'.</msg>
+<arg>${BOTAO_AGENDAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:16:16.088972" elapsed="0.169525"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:16:18.264479" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:16:16.259646" elapsed="2.005026"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:18.266594" level="INFO">Executing JavaScript:
+return document.getElementById('erroAgendar') ? document.getElementById('erroAgendar').textContent : 'bloqueado pelo navegador'
+Without any arguments.</msg>
+<msg time="2026-06-11T23:16:18.302117" level="INFO">${erro} = Não é possível agendar consultas em datas passadas.</msg>
+<var>${erro}</var>
+<arg>return document.getElementById('erroAgendar') ? document.getElementById('erroAgendar').textContent : 'bloqueado pelo navegador'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-11T23:16:18.266071" elapsed="0.036472"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-06-11T23:16:18.306666" level="INFO">Length is 51.</msg>
+<arg>${erro}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-06-11T23:16:18.304629" elapsed="0.002622"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-11T23:16:18.311583" elapsed="0.357798"/>
+</kw>
+<doc>Regra R3: Data anterior ao mínimo definido — bloqueado pelo navegador</doc>
+<status status="PASS" start="2026-06-11T23:16:02.312176" elapsed="16.357469"/>
+</test>
+<status status="FAIL" start="2026-06-11T23:15:29.188871" elapsed="49.483799"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Agendar" id="s1" pass="2" fail="1" skip="0">Agendar</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

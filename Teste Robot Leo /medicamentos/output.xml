@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.5 on darwin)" generated="2026-06-11T23:16:46.041516" rpa="false" schemaversion="5">
+<suite id="s1" name="Medicamentos" source="/Users/leoclemons/Documents/LifeClinic/Teste Robot Leo /medicamentos/medicamentos.robot">
+<test id="s1-t1" name="CT01 - Deve cadastrar medicamento com dados válidos" line="31">
+<kw name="Fazer Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:46.880861" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/index.html'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:16:46.880522" elapsed="4.006095"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-11T23:16:50.887819" elapsed="0.405576"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:16:53.295114" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:16:51.293628" elapsed="2.001983"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:53.298567" level="INFO">Typing text 'leo@gmail.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL_LOGIN}</arg>
+<arg>leo@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:16:53.296190" elapsed="0.339826"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:53.636621" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-06-11T23:16:53.690150" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_LOGIN}</arg>
+<arg>10101020</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:16:53.636265" elapsed="0.140401"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:53.777176" level="INFO">Clicking button 'css=#formLogin button[type="submit"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:16:53.776873" elapsed="0.201001"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:16:56.016379" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:16:53.978104" elapsed="2.038552"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:56.018691" level="INFO">Opening url 'http://localhost:3000/medicamentos.html'</msg>
+<arg>${URL_MEDICAMENTOS}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:16:56.018331" elapsed="0.498470"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:16:58.517895" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:16:56.517009" elapsed="2.001220"/>
+</kw>
+<status status="PASS" start="2026-06-11T23:16:46.879617" elapsed="11.638981"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:58.520189" level="INFO">Typing text 'Ibuprofeno' into text field 'id=nomeMed'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>Ibuprofeno</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:16:58.519344" elapsed="0.163545"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:58.688782" level="INFO">Typing text '12:00' into text field 'id=horarioMed'.</msg>
+<arg>${INPUT_HORARIO}</arg>
+<arg>12:00</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:16:58.687967" elapsed="0.152744"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:58.841410" level="INFO">Executing JavaScript:
+document.querySelector('input[value="TER"]').click()
+Without any arguments.</msg>
+<arg>document.querySelector('input[value="TER"]').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-11T23:16:58.841058" elapsed="0.091651"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:16:59.938374" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:16:58.936420" elapsed="1.002252"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:16:59.944309" level="INFO">Clicking button 'css=#formMedicamento button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:16:59.942131" elapsed="0.184373"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:17:03.130000" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:17:00.128333" elapsed="3.002275"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:03.205128" level="INFO">${btn} = save
+Salvar Medicamento</msg>
+<var>${btn}</var>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:03.131305" elapsed="0.073905"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-06-11T23:17:03.208149" level="FAIL">'save
+Salvar Medicamento' does not contain 'Salvo'</msg>
+<arg>${btn}</arg>
+<arg>Salvo</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-06-11T23:17:03.206070" elapsed="0.002493">'save
+Salvar Medicamento' does not contain 'Salvo'</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-11T23:17:03.209267" elapsed="0.395634"/>
+</kw>
+<doc>Regra R1: Todos os campos válidos — medicamento salvo com sucesso</doc>
+<status status="FAIL" start="2026-06-11T23:16:46.878363" elapsed="16.727031">'save
+Salvar Medicamento' does not contain 'Salvo'</status>
+</test>
+<test id="s1-t2" name="CT02 - Deve bloquear envio com nome vazio" line="44">
+<kw name="Fazer Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:03.613652" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/index.html'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:17:03.613132" elapsed="4.093258"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-11T23:17:07.707354" elapsed="0.398185"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:17:10.107598" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:17:08.105945" elapsed="2.001810"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:10.108750" level="INFO">Typing text 'leo@gmail.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL_LOGIN}</arg>
+<arg>leo@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:10.107969" elapsed="0.262111"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:10.370921" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-06-11T23:17:10.420271" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_LOGIN}</arg>
+<arg>10101020</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:10.370473" elapsed="0.147789"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:10.519638" level="INFO">Clicking button 'css=#formLogin button[type="submit"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:10.518928" elapsed="0.203753"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:17:12.728130" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:17:10.723345" elapsed="2.005022"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:12.729137" level="INFO">Opening url 'http://localhost:3000/medicamentos.html'</msg>
+<arg>${URL_MEDICAMENTOS}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:17:12.728720" elapsed="0.296817"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:17:15.026876" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:17:13.025863" elapsed="2.001266"/>
+</kw>
+<status status="PASS" start="2026-06-11T23:17:03.611247" elapsed="11.416237"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:15.028861" level="INFO">Typing text '12:00' into text field 'id=horarioMed'.</msg>
+<arg>${INPUT_HORARIO}</arg>
+<arg>12:00</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:15.028149" elapsed="0.129224"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:15.158206" level="INFO">Executing JavaScript:
+document.querySelector('input[value="TER"]').click()
+Without any arguments.</msg>
+<arg>document.querySelector('input[value="TER"]').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-11T23:17:15.157905" elapsed="0.059323"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:17:16.220114" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:17:15.217842" elapsed="1.002789"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:16.239720" level="INFO">Clicking button 'css=#formMedicamento button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:16.232583" elapsed="0.191512"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:17:18.434274" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:17:16.424372" elapsed="2.010144"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:18.435979" level="INFO">Executing JavaScript:
+return window._lastAlert || ''
+Without any arguments.</msg>
+<msg time="2026-06-11T23:17:18.737548" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-11T23:17:18.737856" level="FAIL">UnexpectedAlertPresentException: Alert Text: Preencha nome, horário e selecione pelo menos um dia.
+Message: unexpected alert open: {Alert text : Preencha nome, horário e selecione pelo menos um dia.}
+  (Session info: chrome=149.0.7827.114)
+Stacktrace:
+0   chromedriver                        0x000000010fb2c778 chromedriver + 7026552
+1   chromedriver                        0x000000010fb240aa chromedriver + 6992042
+2   chromedriver                        0x000000010f4f16b5 chromedriver + 493237
+3   chromedriver                        0x000000010f58f0ed chromedriver + 1138925
+4   chromedriver                        0x000000010f538db1 chromedriver + 785841
+5   chromedriver                        0x000000010f539bd1 chromedriver + 789457
+6   chromedriver                        0x000000010fae46c7 chromedriver + 6731463
+7   chromedriver                        0x000000010fae8b73 chromedriver + 6749043
+8   chromedriver                        0x000000010fac52c4 chromedriver + 6603460
+9   chromedriver                        0x000000010fae9672 chromedriver + 6751858
+10  chromedriver                        0x000000010fab52a0 chromedriver + 6537888
+11  chromedriver                        0x000000010fb10fe8 chromedriver + 6914024
+12  chromedriver                        0x000000010fb1117c chromedriver + 6914428
+13  chromedriver                        0x000000010fb23cc1 chromedriver + 6991041
+14  libsystem_pthread.dylib             0x00007ff80c64f4e1 _pthread_start + 125
+15  libsystem_pthread.dylib             0x00007ff80c64af6b thread_start + 15
+</msg>
+<var>${alerta}</var>
+<arg>return window._lastAlert || ''</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="FAIL" start="2026-06-11T23:17:18.435574" elapsed="0.319508">UnexpectedAlertPresentException: Alert Text: Preencha nome, horário e selecione pelo menos um dia.
+Message: unexpected alert open: {Alert text : Preencha nome, horário e selecione pelo menos um dia.}
+  (Session info: chrome=149.0.7827.114)
+Stacktrace:
+0   chromedriver                        0x000000010fb2c778 chromedriver + 7026552
+1   chromedriver                        0x000000010fb240aa chromedriver + 6992042
+2   chromedriver                        0x000000010f4f16b5 chromedriver + 493237
+3   chromedriver                        0x000000010f58f0ed chromedriver + 1138925
+4   chromedriver                        0x000000010f538db1 chromedriver + 785841
+5   chromedriver                        0x000000010f539bd1 chromedriver + 789457
+6   chromedriver                        0x000000010fae46c7 chromedriver + 6731463
+7   chromedriver                        0x000000010fae8b73 chromedriver + 6749043
+8   chromedriver                        0x000000010fac52c4 chromedriver + 6603460
+9   chromedriver                        0x000000010fae9672 chromedriver + 6751858
+10  chromedriver                        0x000000010fab52a0 chromedriver + 6537888
+11  chromedriver                        0x000000010fb10fe8 chromedriver + 6914024
+12  chromedriver                        0x000000010fb1117c chromedriver + 6914428
+13  chromedriver                        0x000000010fb23cc1 chromedriver + 6991041
+14  libsystem_pthread.dylib             0x00007ff80c64f4e1 _pthread_start + 125
+15  libsystem_pthread.dylib             0x00007ff80c64af6b thread_start + 15
+</status>
+</kw>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2026-06-11T23:17:18.755773" elapsed="0.000096"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-11T23:17:18.756582" elapsed="0.388713"/>
+</kw>
+<doc>Regra R2: Nome vazio — alerta exibido pelo JavaScript</doc>
+<status status="FAIL" start="2026-06-11T23:17:03.609227" elapsed="15.536571">UnexpectedAlertPresentException: Alert Text: Preencha nome, horário e selecione pelo menos um dia.
+Message: unexpected alert open: {Alert text : Preencha nome, horário e selecione pelo menos um dia.}
+  (Session info: chrome=149.0.7827.114)
+Stacktrace:
+0   chromedriver                        0x000000010fb2c778 chromedriver + 7026552
+1   chromedriver                        0x000000010fb240aa chromedriver + 6992042
+2   chromedriver                        0x000000010f4f16b5 chromedriver + 493237
+3   chromedriver                        0x000000010f58f0ed chromedriver + 1138925
+4   chromedriver                        0x000000010f538db1 chromedriver + 785841
+5   chromedriver                        0x000000010f539bd1 chromedriver + 789457
+6   chromedriver                        0x000000010fae46c7 chromedriver + 6731463
+7   chromedriver                        0x000000010fae8b73 chromedriver + 6749043
+8   chromedriver                        0x000000010fac52c4 chromedriver + 6603460
+9   chromedriver                        0x000000010fae9672 chromedriver + 6751858
+10  chromedriver                        0x000000010fab52a0 chromedriver + 6537888
+11  chromedriver                        0x000000010fb10fe8 chromedriver + 6914024
+12  chromedriver                        0x000000010fb1117c chromedriver + 6914428
+13  chromedriver                        0x000000010fb23cc1 chromedriver + 6991041
+14  libsystem_pthread.dylib             0x00007ff80c64f4e1 _pthread_start + 125
+15  libsystem_pthread.dylib             0x00007ff80c64af6b thread_start + 15
+</status>
+</test>
+<test id="s1-t3" name="CT03 - Deve validar dias não selecionados" line="57">
+<kw name="Fazer Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:19.158506" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/index.html'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:17:19.157759" elapsed="4.129863"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-11T23:17:23.289820" elapsed="0.403908"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:17:25.695538" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:17:23.693949" elapsed="2.001833"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:25.697735" level="INFO">Typing text 'leo@gmail.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL_LOGIN}</arg>
+<arg>leo@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:25.696522" elapsed="0.223650"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:25.923819" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-06-11T23:17:25.982799" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA_LOGIN}</arg>
+<arg>10101020</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:25.923329" elapsed="0.146205"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:26.070786" level="INFO">Clicking button 'css=#formLogin button[type="submit"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:26.070050" elapsed="0.197456"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:17:28.270154" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:17:26.267729" elapsed="2.002672"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:28.273990" level="INFO">Opening url 'http://localhost:3000/medicamentos.html'</msg>
+<arg>${URL_MEDICAMENTOS}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-11T23:17:28.270771" elapsed="0.258346"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:17:30.531664" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:17:28.529460" elapsed="2.002462"/>
+</kw>
+<status status="PASS" start="2026-06-11T23:17:19.152175" elapsed="11.380167"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:30.533753" level="INFO">Typing text 'Ibuprofeno' into text field 'id=nomeMed'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>Ibuprofeno</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:30.533034" elapsed="0.176075"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:30.710079" level="INFO">Typing text '12:00' into text field 'id=horarioMed'.</msg>
+<arg>${INPUT_HORARIO}</arg>
+<arg>12:00</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:30.709666" elapsed="0.161734"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:17:31.875957" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:17:30.873277" elapsed="1.002917"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:31.877432" level="INFO">Clicking button 'css=#formMedicamento button[type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T23:17:31.876752" elapsed="0.146679"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-11T23:17:34.025020" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-11T23:17:32.024046" elapsed="2.001466"/>
+</kw>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<msg time="2026-06-11T23:17:34.292022" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-11T23:17:34.292379" level="FAIL">UnexpectedAlertPresentException: Alert Text: Preencha nome, horário e selecione pelo menos um dia.
+Message: unexpected alert open: {Alert text : Preencha nome, horário e selecione pelo menos um dia.}
+  (Session info: chrome=149.0.7827.114)
+Stacktrace:
+0   chromedriver                        0x000000010611f778 chromedriver + 7026552
+1   chromedriver                        0x00000001061170aa chromedriver + 6992042
+2   chromedriver                        0x0000000105ae46b5 chromedriver + 493237
+3   chromedriver                        0x0000000105b820ed chromedriver + 1138925
+4   chromedriver                        0x0000000105b2bdb1 chromedriver + 785841
+5   chromedriver                        0x0000000105b2cbd1 chromedriver + 789457
+6   chromedriver                        0x00000001060d76c7 chromedriver + 6731463
+7   chromedriver                        0x00000001060dbb73 chromedriver + 6749043
+8   chromedriver                        0x00000001060b82c4 chromedriver + 6603460
+9   chromedriver                        0x00000001060dc672 chromedriver + 6751858
+10  chromedriver                        0x00000001060a82a0 chromedriver + 6537888
+11  chromedriver                        0x0000000106103fe8 chromedriver + 6914024
+12  chromedriver                        0x000000010610417c chromedriver + 6914428
+13  chromedriver                        0x0000000106116cc1 chromedriver + 6991041
+14  libsystem_pthread.dylib             0x00007ff80c64f4e1 _pthread_start + 125
+15  libsystem_pthread.dylib             0x00007ff80c64af6b thread_start + 15
+</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="FAIL" start="2026-06-11T23:17:34.027367" elapsed="0.275650">UnexpectedAlertPresentException: Alert Text: Preencha nome, horário e selecione pelo menos um dia.
+Message: unexpected alert open: {Alert text : Preencha nome, horário e selecione pelo menos um dia.}
+  (Session info: chrome=149.0.7827.114)
+Stacktrace:
+0   chromedriver                        0x000000010611f778 chromedriver + 7026552
+1   chromedriver                        0x00000001061170aa chromedriver + 6992042
+2   chromedriver                        0x0000000105ae46b5 chromedriver + 493237
+3   chromedriver                        0x0000000105b820ed chromedriver + 1138925
+4   chromedriver                        0x0000000105b2bdb1 chromedriver + 785841
+5   chromedriver                        0x0000000105b2cbd1 chromedriver + 789457
+6   chromedriver                        0x00000001060d76c7 chromedriver + 6731463
+7   chromedriver                        0x00000001060dbb73 chromedriver + 6749043
+8   chromedriver                        0x00000001060b82c4 chromedriver + 6603460
+9   chromedriver                        0x00000001060dc672 chromedriver + 6751858
+10  chromedriver                        0x00000001060a82a0 chromedriver + 6537888
+11  chromedriver                        0x0000000106103fe8 chromedriver + 6914024
+12  chromedriver                        0x000000010610417c chromedriver + 6914428
+13  chromedriver                        0x0000000106116cc1 chromedriver + 6991041
+14  libsystem_pthread.dylib             0x00007ff80c64f4e1 _pthread_start + 125
+15  libsystem_pthread.dylib             0x00007ff80c64af6b thread_start + 15
+</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-11T23:17:34.304811" elapsed="0.398419"/>
+</kw>
+<doc>Regra R3: Nenhum dia selecionado — alerta exibido pelo JavaScript</doc>
+<status status="FAIL" start="2026-06-11T23:17:19.149628" elapsed="15.553948">UnexpectedAlertPresentException: Alert Text: Preencha nome, horário e selecione pelo menos um dia.
+Message: unexpected alert open: {Alert text : Preencha nome, horário e selecione pelo menos um dia.}
+  (Session info: chrome=149.0.7827.114)
+Stacktrace:
+0   chromedriver                        0x000000010611f778 chromedriver + 7026552
+1   chromedriver                        0x00000001061170aa chromedriver + 6992042
+2   chromedriver                        0x0000000105ae46b5 chromedriver + 493237
+3   chromedriver                        0x0000000105b820ed chromedriver + 1138925
+4   chromedriver                        0x0000000105b2bdb1 chromedriver + 785841
+5   chromedriver                        0x0000000105b2cbd1 chromedriver + 789457
+6   chromedriver                        0x00000001060d76c7 chromedriver + 6731463
+7   chromedriver                        0x00000001060dbb73 chromedriver + 6749043
+8   chromedriver                        0x00000001060b82c4 chromedriver + 6603460
+9   chromedriver                        0x00000001060dc672 chromedriver + 6751858
+10  chromedriver                        0x00000001060a82a0 chromedriver + 6537888
+11  chromedriver                        0x0000000106103fe8 chromedriver + 6914024
+12  chromedriver                        0x000000010610417c chromedriver + 6914428
+13  chromedriver                        0x0000000106116cc1 chromedriver + 6991041
+14  libsystem_pthread.dylib             0x00007ff80c64f4e1 _pthread_start + 125
+15  libsystem_pthread.dylib             0x00007ff80c64af6b thread_start + 15
+</status>
+</test>
+<status status="FAIL" start="2026-06-11T23:16:46.045611" elapsed="48.659634"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Medicamentos" id="s1" pass="0" fail="3" skip="0">Medicamentos</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

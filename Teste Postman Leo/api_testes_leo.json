@@ -1,0 +1,278 @@
+{
+  "info": {
+    "_postman_id": "leo-lifeclinic-testes",
+    "name": "LifeClinic - Testes de API - Leo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login - Obter Token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var json = pm.response.json();",
+              "pm.collectionVariables.set(\"token\", json.token);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"lucas.adulto@email.com\",\n  \"senha\": \"senha123\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API 1 - Cadastro (Data de Nascimento)",
+      "item": [
+        {
+          "name": "CT01 - Menos de 18 anos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"Mensagem de menor de idade\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.error).to.eql(\"É necessário ter 18 anos ou mais para se cadastrar.\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Lucas Souza\",\n  \"cpf\": \"284.887.114-84\",\n  \"dataNascimento\": \"2015-06-01\",\n  \"telefone\": \"11999999999\",\n  \"email\": \"lucas.menor@email.com\",\n  \"senha\": \"senha123\",\n  \"termos\": true\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/cadastro",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "cadastro"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CT02 - Exatamente 18 anos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "pm.test(\"Mensagem de sucesso\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.message).to.eql(\"Cadastro realizado com sucesso!\");",
+                  "});",
+                  "pm.test(\"Token JWT retornado\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.token).to.be.a(\"string\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Lucas Souza\",\n  \"cpf\": \"856.983.649-07\",\n  \"dataNascimento\": \"2008-06-10\",\n  \"telefone\": \"11999999999\",\n  \"email\": \"lucas.18anos@email.com\",\n  \"senha\": \"senha123\",\n  \"termos\": true\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/cadastro",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "cadastro"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CT03 - Mais de 18 anos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "pm.test(\"Mensagem de sucesso\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.message).to.eql(\"Cadastro realizado com sucesso!\");",
+                  "});",
+                  "pm.test(\"Token JWT retornado\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.token).to.be.a(\"string\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Lucas Souza\",\n  \"cpf\": \"559.034.257-04\",\n  \"dataNascimento\": \"1990-01-01\",\n  \"telefone\": \"11999999999\",\n  \"email\": \"lucas.adulto2@email.com\",\n  \"senha\": \"senha123\",\n  \"termos\": true\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/cadastro",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "cadastro"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "API 2 - Cancelamento de Consulta",
+      "item": [
+        {
+          "name": "CT01 - Consulta inexistente",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});",
+                  "pm.test(\"Mensagem de consulta não encontrada\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.error).to.eql(\"Consulta não encontrada.\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/consultas/ID_INEXISTENTE/cancelar",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "consultas", "ID_INEXISTENTE", "cancelar"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CT02 - Cancelamento válido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Mensagem de cancelamento\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.message).to.eql(\"Consulta cancelada.\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/consultas/{{consultaId}}/cancelar",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "consultas", "{{consultaId}}", "cancelar"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CT03 - Consulta já cancelada",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code deve ser 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"Mensagem de consulta já cancelada\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.error).to.eql(\"Consulta já está cancelada.\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/consultas/{{consultaId}}/cancelar",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "consultas", "{{consultaId}}", "cancelar"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    { "key": "token", "value": "" },
+    { "key": "consultaId", "value": "" }
+  ]
+}
